@@ -24,8 +24,14 @@
         android:theme="@style/Theme.MySchool"
         tools:targetApi="31">
         <activity
+            android:name=".Students.AttendancePP"
+            android:exported="false" />
+        <activity
+            android:name=".M_attendance_Dashboard"
+            android:exported="false" />
+        <activity
             android:name=".MainDashboard"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,9 +43,11 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" />
 
-        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

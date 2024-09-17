@@ -10,13 +10,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainDashboard extends AppCompatActivity {
+import com.example.myschool.Students.AttendancePP;
+
+public class M_attendance_Dashboard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main_dashboard);
+        setContentView(R.layout.activity_mattendance_dashboard);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -25,12 +27,8 @@ public class MainDashboard extends AppCompatActivity {
 
     }
 
-    public void manualattendance(View view) {
-        startActivity(new Intent(this, M_attendance_Dashboard.class));
-    }
-
-    public void qrscan(View view) {
-        startActivity(new Intent(this, MainActivity.class));
-
+    public void openActivityPP(View view) {
+        Intent intent = new Intent(this, AttendancePP.class);
+        startActivity(intent);
     }
 }

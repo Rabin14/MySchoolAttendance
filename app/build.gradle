@@ -62,4 +62,7 @@ dependencies {
     implementation libs.dialogplus
     /* For Material Search Bar */
     implementation libs.materialsearchbar
+    implementation libs.recyclerview
+    implementation libs.firebase.ui.firestore
+    implementation libs.firebase.ui.database // Use the latest version
 }
