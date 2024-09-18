@@ -1,13 +1,11 @@
 package com.example.myschool.Students;
 
-
-
-
-
 import android.Manifest;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.telephony.SmsManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,6 +20,8 @@ import androidx.annotation.NonNull;
 
 import androidx.cardview.widget.CardView;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myschool.ModelClass;
@@ -43,8 +43,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 
-
-
 public class MainAdapter extends FirebaseRecyclerAdapter<StudentModel, MainAdapter.myViewHolder> {
     private static final int SMS_PERMISSION_REQUEST_CODE = 123;
     private static final String PERMISSION_SEND_SMS = Manifest.permission.SEND_SMS; // Named constant for permission
@@ -63,7 +61,6 @@ public class MainAdapter extends FirebaseRecyclerAdapter<StudentModel, MainAdapt
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull StudentModel model) {
 
         holder.sname.setText(model.getNAME());
-
         holder.sroll.setText(model.getROLL());
         holder.sclass.setText(model.getS_CLASS());
         holder.smobile.setText(model.getMOBILE());
@@ -107,14 +104,17 @@ public class MainAdapter extends FirebaseRecyclerAdapter<StudentModel, MainAdapt
                     public void onClick(View v) {
 
                         //////////////////////////////////////////////////////////////////////////////////////////////
-                        String rollNumber = sroll.getText().toString();
+
                         String attendanceDate = sdate.getText().toString();
                         // Generate a unique key based on the roll number
+                        String rollNumber = sroll.getText().toString();
                         int number = Integer.parseInt(rollNumber);
                         String uniqueKey = String.format("%03d", number);
 
 
-                        DatabaseReference attendanceRef = FirebaseDatabase.getInstance().getReference().child("Attendance/PP").child(uniqueKey);
+                        DatabaseReference attendanceRef = FirebaseDatabase.getInstance().getReference().child("Attendance"+model.getS_CLASS())
+                                .child(attendanceDate)
+                                .child(uniqueKey);
 
                         attendanceRef.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
@@ -142,8 +142,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<StudentModel, MainAdapt
                                                     });
                                             alertbox.show();
                                             //////////////
-/*
-                                            // Check and request SMS permission
+                                    // Check and request SMS permission
                                             // Check and request SMS permission (using the Activity context)
                                             Activity activity = (Activity) view.getContext();
                                             if (ContextCompat.checkSelfPermission(activity, PERMISSION_SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
@@ -151,7 +150,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<StudentModel, MainAdapt
                                             } else {
                                                 ActivityCompat.requestPermissions(activity, new String[]{PERMISSION_SEND_SMS}, SMS_PERMISSION_REQUEST_CODE);
                                             }
-                                            */
+
 
                                             /////////////////////////////
 
@@ -185,7 +184,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<StudentModel, MainAdapt
                 }
             }
 
-            private String constructSmsMessage(ModelClass model, String attendanceDate, String attendanceStatus) {
+            private String constructSmsMessage(StudentModel model, String attendanceDate, String attendanceStatus) {
                 // Customize this to your desired SMS format
                 String message = "Dear Parent/Guardian,\n\n";
                 message += "Attendance update for: " + model.getNAME() + "\n";

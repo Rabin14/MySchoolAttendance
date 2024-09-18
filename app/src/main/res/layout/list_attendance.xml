@@ -75,14 +75,6 @@
             android:layout_height="wrap_content"
             android:text="FOUR"
             android:textSize="16sp"/>
-        <ImageView
-            android:layout_marginLeft="220dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/baseline_double_arrow_24">
-
-        </ImageView>
 
     </LinearLayout>
     <LinearLayout
@@ -105,7 +97,7 @@
             android:textSize="16sp"/>
     </LinearLayout>
     <LinearLayout
-        android:visibility="gone"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -114,14 +106,14 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mobile: "
+            android:text="Status: "
             android:textSize="16sp"/>
         <TextView
-            android:id="@+id/smobile"
+            android:id="@+id/sstatus"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="00002144440"
+            android:text="Present"
             android:textSize="16sp"/>
     </LinearLayout>
     </LinearLayout>

@@ -187,7 +187,7 @@
                     android:layout_marginBottom="5dp"
                     android:clickable="true"
                     android:minHeight="85dp"
-                    android:onClick="luckynumber"
+                    android:onClick="viewAttendance"
                     app:cardBackgroundColor="#DBDADA"
                     app:cardCornerRadius="16dp"
                     app:cardElevation="2dp"

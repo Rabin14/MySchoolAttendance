@@ -74,8 +74,7 @@ public class MainActivity extends AppCompatActivity {
         sroll = findViewById(R.id.sroll);
         sclass = findViewById(R.id.sclass);
         smobile = findViewById(R.id.smobile);
-        // Initialize Firebase Realtime Database reference
-        databaseReference = FirebaseDatabase.getInstance().getReference("students");
+
 
         previewView = findViewById(R.id.previewView);
 
@@ -157,8 +156,15 @@ public class MainActivity extends AppCompatActivity {
     private void markAttendance(String qrCodeValue) {
         String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         String currentTime = new SimpleDateFormat("hh:mm:ss a", Locale.getDefault()).format(new Date());
+        // Generate a unique key based on the roll number
+        String rollNumber = sroll.getText().toString();
+        int number = Integer.parseInt(rollNumber);
+        String uniqueKey = String.format("%03d", number);
         String status = "Present";
-        DatabaseReference attendanceRef = FirebaseDatabase.getInstance().getReference().child("Attendance").child(currentDate).child(qrCodeValue);
+        DatabaseReference attendanceRef = FirebaseDatabase.getInstance().getReference().child("Attendance"+sclass.getText().toString())
+                .child(currentDate)
+                .child(uniqueKey);
+
         attendanceRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

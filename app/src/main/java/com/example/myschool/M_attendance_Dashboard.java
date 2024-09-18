@@ -29,6 +29,32 @@ public class M_attendance_Dashboard extends AppCompatActivity {
 
     public void openActivityPP(View view) {
         Intent intent = new Intent(this, AttendancePP.class);
+        intent.putExtra("sclass","PP");
+        startActivity(intent);
+
+    }
+
+    public void classone(View view) {
+        Intent intent = new Intent(this, AttendancePP.class);
+        intent.putExtra("sclass","ONE");
+        startActivity(intent);
+    }
+
+    public void classtwo(View view) {
+        Intent intent = new Intent(this, AttendancePP.class);
+        intent.putExtra("sclass","TWO");
+        startActivity(intent);
+    }
+
+    public void classthree(View view) {
+        Intent intent = new Intent(this, AttendancePP.class);
+        intent.putExtra("sclass","THREE");
+        startActivity(intent);
+    }
+
+    public void classfour(View view) {
+        Intent intent = new Intent(this, AttendancePP.class);
+        intent.putExtra("sclass","FOUR");
         startActivity(intent);
     }
 }

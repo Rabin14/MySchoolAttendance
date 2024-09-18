@@ -24,6 +24,9 @@
         android:theme="@style/Theme.MySchool"
         tools:targetApi="31">
         <activity
+            android:name=".VewAttendance.AttendanceView"
+            android:exported="false" />
+        <activity
             android:name=".Students.AttendancePP"
             android:exported="false" />
         <activity
