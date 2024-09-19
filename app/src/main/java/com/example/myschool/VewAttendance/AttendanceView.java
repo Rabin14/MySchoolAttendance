@@ -45,7 +45,7 @@ public class AttendanceView extends AppCompatActivity {
         FirebaseRecyclerOptions<AttendanceModel> options =
                 new FirebaseRecyclerOptions.Builder<AttendanceModel>()
                         .setQuery(FirebaseDatabase.getInstance().getReference()
-                                        .child("AttendancePP")
+                                        .child("Attendance"+ssclass)
                                         .child(currentDate)
 
                                 , AttendanceModel.class)

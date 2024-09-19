@@ -142,6 +142,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<StudentModel, MainAdapt
                                                     });
                                             alertbox.show();
                                             //////////////
+                                            /*
                                     // Check and request SMS permission
                                             // Check and request SMS permission (using the Activity context)
                                             Activity activity = (Activity) view.getContext();
@@ -151,7 +152,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<StudentModel, MainAdapt
                                                 ActivityCompat.requestPermissions(activity, new String[]{PERMISSION_SEND_SMS}, SMS_PERMISSION_REQUEST_CODE);
                                             }
 
-
+*/
                                             /////////////////////////////
 
                                         })

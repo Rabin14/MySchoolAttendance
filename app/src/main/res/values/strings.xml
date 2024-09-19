@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Student Attendance</string>
+    ////////////////
+    <string-array name="s_class">
+        <item>Select Class</item>
+        <item>PP</item>
+        <item>ONE</item>
+        <item>TWO</item>
+        <item>THREE</item>
+        <item>FOUR</item>
+
+
+    </string-array>
 </resources>
