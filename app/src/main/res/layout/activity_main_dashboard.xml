@@ -3,19 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="#fff"
+    android:background="#070707"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainDashboard">
        <LinearLayout
-           android:background="#fff"
+           android:background="#070707"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
+                android:background="@drawable/circle"
                 android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="160dp"
@@ -26,10 +27,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+
                 android:layout_marginTop="20dp"
                 android:text="Advanced Attendance System"
-                android:textColor="#FF9800"
+                android:textColor="#FFEB3B"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -39,8 +40,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:text="Developed By: Rabindranath Pathak"
-                android:textColor="#FF5722"
-                android:textSize="13sp"
+                android:textColor="#FBFBF9"
+                android:textSize="11sp"
                 android:textStyle="bold"
               />
 
@@ -60,7 +61,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff"
+                android:background="#070707"
                 >
 
                 <androidx.cardview.widget.CardView
@@ -73,7 +74,7 @@
                     android:clickable="true"
                     android:minHeight="85dp"
                     android:onClick="manualattendance"
-                    app:cardBackgroundColor="#DBDADA"
+                    app:cardBackgroundColor="#A6A5A5"
                     app:cardCornerRadius="16dp"
                     app:cardElevation="12dp"
                     android:focusable="true">
@@ -117,7 +118,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff"
+                android:background="#070707"
                 android:clickable="true">
 
                 <androidx.cardview.widget.CardView
@@ -131,7 +132,7 @@
                     android:clickable="true"
                     android:minHeight="85dp"
                     android:text="QR Attendance"
-                    app:cardBackgroundColor="#DBDADA"
+                    app:cardBackgroundColor="#A6A5A5"
                     app:cardCornerRadius="16dp"
                     app:cardElevation="2dp"
                     android:focusable="true">
@@ -175,7 +176,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff"
+                android:background="#070707"
                 android:clickable="true">
 
                 <androidx.cardview.widget.CardView
@@ -188,7 +189,7 @@
                     android:clickable="true"
                     android:minHeight="85dp"
                     android:onClick="viewAttendance"
-                    app:cardBackgroundColor="#DBDADA"
+                    app:cardBackgroundColor="#A6A5A5"
                     app:cardCornerRadius="16dp"
                     app:cardElevation="2dp"
                     android:focusable="true">

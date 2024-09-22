@@ -44,12 +44,14 @@
         android:orientation="horizontal"
         >
         <TextView
+            android:textColor="#040404"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name: "
             android:textSize="16sp"/>
         <TextView
+            android:textColor="#040404"
             android:id="@+id/sname"
             android:textStyle="bold"
             android:layout_width="wrap_content"
@@ -63,12 +65,14 @@
         android:orientation="horizontal"
         >
         <TextView
+            android:textColor="#040404"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Class: "
             android:textSize="16sp"/>
         <TextView
+            android:textColor="#040404"
             android:id="@+id/sclass"
             android:textStyle="bold"
             android:layout_width="wrap_content"
@@ -91,12 +95,14 @@
         android:orientation="horizontal"
         >
         <TextView
+            android:textColor="#040404"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Roll: "
             android:textSize="16sp"/>
         <TextView
+            android:textColor="#040404"
             android:id="@+id/sroll"
             android:textStyle="bold"
             android:layout_width="wrap_content"
