@@ -14,36 +14,36 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="20dp"
+               android:text="Advanced Attendance System"
+               android:textColor="#FFEB3B"
+               android:textSize="20sp"
+               android:textStyle="bold" />
+           <TextView
 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="0dp"
+               android:text="Developed By: Rabindranath Pathak"
+               android:textColor="#FBFBF9"
+               android:textSize="11sp"
+               android:textStyle="bold"
+               />
             <ImageView
                 android:background="@drawable/circle"
                 android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
-                android:layout_height="160dp"
+                android:layout_height="100dp"
                 android:adjustViewBounds="true"
                 android:cropToPadding="true"
                 android:src="@drawable/sadarpur_logo" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
 
-                android:layout_marginTop="20dp"
-                android:text="Advanced Attendance System"
-                android:textColor="#FFEB3B"
-                android:textSize="18sp"
-                android:textStyle="bold" />
 
-            <TextView
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:text="Developed By: Rabindranath Pathak"
-                android:textColor="#FBFBF9"
-                android:textSize="11sp"
-                android:textStyle="bold"
-              />
 
             <TextView
                 android:id="@+id/rabin2"
@@ -97,7 +97,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Take student attendance manually"
+                            android:text="Mark student attendance manually"
                             android:textColor="#4E4D4D"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -155,7 +155,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Take student attendance using QR"
+                            android:text="Mark student attendance using QR"
                             android:textColor="#4E4D4D"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -210,6 +210,7 @@
                             android:textStyle="bold" />
 
                         <TextView
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="View Today's attendance"
@@ -228,10 +229,79 @@
                     android:elevation="13dp"
                     android:src="@drawable/baseline_checklist_24" />
             </RelativeLayout>
+           <LinearLayout
+               android:background="#070707"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:gravity="center"
+               android:orientation="vertical">
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:background="#070707"
+                   >
 
+               <androidx.cardview.widget.CardView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="30dp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginEnd="10dp"
+                   android:layout_marginBottom="5dp"
+                   android:clickable="true"
+                   android:minHeight="85dp"
+                   app:cardBackgroundColor="#F8FDBF"
+                   app:cardCornerRadius="1dp"
+                   app:cardElevation="12dp"
+                   android:focusable="true">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:layout_marginStart="5dp"
+                   android:orientation="vertical">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Attendance Summary"
+                       android:textColor="@color/black"
+                       android:textSize="15sp"
+                       android:textStyle="bold" />
+                   <TextView
+                       android:id="@+id/ddate"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Date: 25/05/1980"
+                       android:textColor="#0B0B0A"
+                       android:textSize="14sp"
+                       android:textStyle="bold" />
+
+                   <TextView
+                       android:textStyle="bold"
+                       android:id="@+id/vview"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Manual Attendance"
+                       android:textColor="@color/black"
+                       android:textSize="13sp"
+                   />
+                   <TextView
+                       android:id="@+id/ttotal"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Total Attendance"
+                       android:textColor="@color/black"
+                       android:textSize="14sp"
+                       android:textStyle="bold" />
+               </LinearLayout>
+               </androidx.cardview.widget.CardView>
+               </RelativeLayout>
+           </LinearLayout>
         </LinearLayout>
 
 
 
 
     </RelativeLayout>
+

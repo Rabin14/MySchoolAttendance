@@ -1,27 +1,44 @@
 package com.example.myschool;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.myschool.Students.AttendancePP;
+import com.example.myschool.VewAttendance.AttendanceCountClass;
 import com.example.myschool.VewAttendance.AttendanceView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.OnClickListener;
 import com.orhanobut.dialogplus.ViewHolder;
 
-public class MainDashboard extends AppCompatActivity {
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
+public class MainDashboard extends AppCompatActivity {
+TextView ddate,vview,ttotal;
+    WebView wv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +49,12 @@ public class MainDashboard extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        ddate = findViewById(R.id.ddate);
+        String date_n = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        ddate.setText("Date: "+date_n);
+        vview = findViewById(R.id.vview);
+        ttotal = findViewById(R.id.ttotal);
+        loadtotalview();
     }
 
     public void manualattendance(View view) {
@@ -86,7 +108,46 @@ public class MainDashboard extends AppCompatActivity {
 
         dialog.show(); // Show the dialog
     }
+    public void loadtotalview(){
+
+
+        // Reference to the Firebase Database
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance()
+                .getReference("1G7udEQy5eRTbAD0ryCHZEF-JVvDeNyKwT1sBOhe3MxE")
+                .child("COUNT_ATTENDANCE")
+                .child("0");
+
+        // Attach a ValueEventListener to the database reference
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // Get the student data from the snapshot
+                AttendanceCountClass student = dataSnapshot.getValue(AttendanceCountClass.class);
+
+                // Check if student data is null
+                if (student != null) {
+                    vview.setText("PP:"+student.getPP()+",  "+"ONE:"+student.getONE()+",  "+"TWO:"+student.getTWO()+",  "+"THREE:"+student.getTHREE()+",  "+"FOUR:"+student.getFOUR());
+                    ttotal.setText("Total Attendance:"+student.getTOTAL());
+
+                } else {
+                    // If the student is null, notify the user
+                    Toast.makeText(MainDashboard.this, "data not found.", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Log the error and show a Toast to notify the user
+                Log.e("MainActivity", "Failed to load data: " + databaseError.getMessage());
+
+            }
+        });
+
+        }
+
 
 
 
 }
+
+
