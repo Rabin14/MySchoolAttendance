@@ -65,4 +65,5 @@ dependencies {
     implementation libs.recyclerview
     implementation libs.firebase.ui.firestore
     implementation libs.firebase.ui.database // Use the latest version
+
 }

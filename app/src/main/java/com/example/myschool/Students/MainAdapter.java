@@ -133,7 +133,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<StudentModel, MainAdapt
                                             dialogPlus.dismiss();
                                             //////////////////
                                             android.app.AlertDialog.Builder alertbox = new AlertDialog.Builder(v.getRootView().getContext());
-                                            alertbox.setMessage("Attendance Successfully Added!");
+                                            alertbox.setMessage("SMS Successfully Send !!  ");
                                             alertbox.setTitle(" Roll:" + model.getROLL());
                                             alertbox.setPositiveButton("OK",
                                                     new DialogInterface.OnClickListener() {
