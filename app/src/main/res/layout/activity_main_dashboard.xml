@@ -83,7 +83,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginStart="50dp"
+                        android:layout_marginStart="30dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -141,7 +141,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="30dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -198,7 +198,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="30dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -242,6 +242,8 @@
                    >
 
                <androidx.cardview.widget.CardView
+                   app:cardBackgroundColor="#A6A5A5"
+                   app:cardCornerRadius="16dp"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:layout_marginStart="30dp"
@@ -250,16 +252,14 @@
                    android:layout_marginBottom="5dp"
                    android:clickable="true"
                    android:minHeight="85dp"
-                   app:cardBackgroundColor="#F8FDBF"
-                   app:cardCornerRadius="1dp"
                    app:cardElevation="12dp"
                    android:focusable="true">
 
                <LinearLayout
+                   android:layout_marginLeft="30dp"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:layout_gravity="center"
-                   android:layout_marginStart="5dp"
                    android:orientation="vertical">
 
                    <TextView
@@ -298,6 +298,12 @@
                        android:textStyle="bold" />
                </LinearLayout>
                </androidx.cardview.widget.CardView>
+                   <ImageView
+                       android:layout_width="60dp"
+                       android:layout_height="60dp"
+                       android:layout_centerVertical="true"
+                       android:elevation="13dp"
+                       android:src="@drawable/baseline_troubleshoot_24" />
                </RelativeLayout>
            </LinearLayout>
         </LinearLayout>

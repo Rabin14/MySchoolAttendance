@@ -142,7 +142,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<StudentModel, MainAdapt
                                                     });
                                             alertbox.show();
                                             //////////////
-                                            /*
+
                                     // Check and request SMS permission
                                             // Check and request SMS permission (using the Activity context)
                                             Activity activity = (Activity) view.getContext();
@@ -152,7 +152,6 @@ public class MainAdapter extends FirebaseRecyclerAdapter<StudentModel, MainAdapt
                                                 ActivityCompat.requestPermissions(activity, new String[]{PERMISSION_SEND_SMS}, SMS_PERMISSION_REQUEST_CODE);
                                             }
 
-*/
                                             /////////////////////////////
 
                                         })
@@ -187,7 +186,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<StudentModel, MainAdapt
 
             private String constructSmsMessage(StudentModel model, String attendanceDate, String attendanceStatus) {
                 // Customize this to your desired SMS format
-                String message = "Dear Parent/Guardian,\n\n";
+                String message = "Dear Guardian,\n\n";
                 message += "Attendance update for: " + model.getNAME() + "\n";
                 message += "Class: PP\n";
                 message += "Roll No: " + model.getROLL() + "\n";
