@@ -188,7 +188,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<StudentModel, MainAdapt
                 // Customize this to your desired SMS format
                 String message = "Dear Guardian,\n\n";
                 message += "Attendance update for: " + model.getNAME() + "\n";
-                message += "Class: PP\n";
+                message += "Class: "+ model.getS_CLASS()+"\n";
                 message += "Roll No: " + model.getROLL() + "\n";
                 message += "Date: " + attendanceDate + "\n";
                 message += "Status: " + attendanceStatus + "\n";
